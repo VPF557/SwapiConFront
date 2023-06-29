@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>SwapiConFront.example</groupId>
 	<artifactId>SwapiConFront</artifactId>
-	<version>0.2-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>SwapiConFront</name>
 	<description>SwapiConFront</description>
 	<properties>
@@ -31,6 +31,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
