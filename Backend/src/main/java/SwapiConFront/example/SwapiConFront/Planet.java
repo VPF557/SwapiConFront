@@ -2,17 +2,17 @@ package SwapiConFront.example.SwapiConFront;
 
 import com.google.gson.Gson;
 
-public class Planets
+public class Planet
 {
     private String name;
     private String climate;
     private String gravity;
     private String population;
 
-    public Planets() {
+    public Planet() {
     }
 
-    public Planets(String name, String climate, String gravity, String population) {
+    public Planet(String name, String climate, String gravity, String population) {
         this.name = name;
         this.climate = climate;
         this.gravity = gravity;

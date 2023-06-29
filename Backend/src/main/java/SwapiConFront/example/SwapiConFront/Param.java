@@ -3,17 +3,17 @@ package SwapiConFront.example.SwapiConFront;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.Gson;
 
-public class Params
+public class Param
 {
     @JsonProperty
     private String parameter1;
     @JsonProperty
     private String parameter2;
 
-    public Params() {
+    public Param() {
     }
 
-    public Params(String parameter1, String parameter2) {
+    public Param(String parameter1, String parameter2) {
         this.parameter1 = parameter1;
         this.parameter2 = parameter2;
     }
