@@ -15,7 +15,7 @@ public class DataHandingTest {
         ArrayList<Param>  listaORG = new ArrayList<Param>();
         ArrayList<Param>  listaNuev = reader.LeerFicheroPeticiones("Petitions.json") ;
         DataHanding data = new DataHanding();
-        listaNuev = data.buscarObjeto(param.getParameter1(),param.getParameter2(),"Petitions");
+        listaNuev = data.buscarObjeto(param.getParameter1(),param.getParameter2(),"Petitions.json");
 
         if(listaNuev.size() == listaORG.size())
         {
