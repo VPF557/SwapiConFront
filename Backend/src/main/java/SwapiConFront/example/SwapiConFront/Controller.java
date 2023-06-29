@@ -11,14 +11,14 @@ public class Controller {
     DataHanding data = new DataHanding();
     EscribirJson writter = new EscribirJson();
 
-   /* @GetMapping("/registro")
-    public ArrayList<Parametro> listaObjeto1()
+    @GetMapping("/registro")
+    public ArrayList<Param> listaObjeto1()
     {
         //Leemos el reason e introducimos los elementos en un arraylist
-        ArrayList<Parametro> listaPeticiones = reader.LeerFicheroPeticiones("Peticiones.json");
+        ArrayList<Param> listaPeticiones = reader.LeerFicheroPeticiones("Petitions.json");
         //Mostramos los elementos leidos
         return listaPeticiones;
-    } */
+    }
 
     @PostMapping("/peticion")
     public void mandarElemento(@RequestBody Param objeto1)
