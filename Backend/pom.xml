@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>SwapiConFront.example</groupId>
 	<artifactId>SwapiConFront</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.2-SNAPSHOT</version>
 	<name>SwapiConFront</name>
 	<description>SwapiConFront</description>
 	<properties>
