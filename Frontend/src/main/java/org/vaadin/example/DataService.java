@@ -44,6 +44,28 @@ public class DataService {
         return listaParam;
     }
 
+    public static ArrayList<Planet> getPlanets(ArrayList<Planet> listaPlanets) throws URISyntaxException
+    {
+        String urlPrefix = "http://localhost:8081/registroP";
+
+        HttpRequest httpRequest = HttpRequest.newBuilder().uri(new URI(urlPrefix)).GET().build();
+        Gson gson = new Gson();
+        String resultado = null;
+        HttpResponse<String> respuesta = null;
+
+        try {
+            respuesta = HttpClient.newBuilder().build().send(httpRequest, HttpResponse.BodyHandlers.ofString());
+            resultado = respuesta.body();
+            listaPlanets = gson.fromJson(resultado, new TypeToken<ArrayList<Planet>>(){}.getType());
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return listaPlanets;
+    }
+
 
     public static ArrayList<Param> aniadirDatosLista(Param productoNuevo, ArrayList<Param> listaParam){
         Gson g = new Gson();
@@ -76,7 +98,7 @@ public class DataService {
 
     public static ArrayList<Param> eliminarParam(Param productoNuevo, ArrayList<Param> listaParam){
         Gson g = new Gson();
-        String urlPrefix = "http://localhost:8081/Borrar?parameter1= " + productoNuevo.getParameter1() + "&?parameter2=" + productoNuevo.getParameter2();
+        String urlPrefix = "http://localhost:8081/Borrar?parameter1=" + productoNuevo.getParameter1() + "&parameter2=" + productoNuevo.getParameter2();
         CloseableHttpClient httpClient = HttpClients.createDefault();
         String datospasar = productoNuevo.toString();
         StringEntity entidad = null;
