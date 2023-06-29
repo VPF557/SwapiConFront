@@ -19,6 +19,7 @@ public class VistaListado extends VerticalLayout {
         removeAll();
         HorizontalLayout horizontal= new HorizontalLayout();
         ArrayList<Param> listaParams = new ArrayList<>();
+        ArrayList<Planet> listaPlanet = new ArrayList<>();
         ArrayList<Param> listaAux = new ArrayList<>();
 
         Grid<Param> grid = new Grid<>(Param.class, false);
@@ -43,7 +44,24 @@ public class VistaListado extends VerticalLayout {
         }
         grid.setItems(listaParams);
 
-        this.add(horizontal,grid);
+
+        Grid<Planet> grid2 = new Grid<>(Planet.class, false);
+        grid2.addColumn(Planet::getName).setHeader("Name ");
+        grid2.addColumn(Planet::getGravity).setHeader("Gravity ");
+        grid2.addColumn(Planet::getPopulation).setHeader("Population");
+        grid2.addColumn(Planet::getClimate).setHeader("Climate");
+
+        GridContextMenu<Param> menu2 = grid.addContextMenu();
+        try {
+            listaPlanet = DataService.getPlanets(listaPlanet);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+        grid2.setItems(listaPlanet);
+        grid2.setAllRowsVisible(true);
+        this.add(grid2);
+
+        this.add(horizontal,grid,grid2);
     }
 
 }
