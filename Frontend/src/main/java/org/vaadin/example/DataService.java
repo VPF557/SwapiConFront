@@ -76,7 +76,7 @@ public class DataService {
 
     public static ArrayList<Param> eliminarParam(Param productoNuevo, ArrayList<Param> listaParam){
         Gson g = new Gson();
-        String urlPrefix = "http://localhost:8081/Borrar?parameter1= " + productoNuevo.getParameter1() + "&?parameter2=" + productoNuevo.getParameter2();
+        String urlPrefix = "http://localhost:8081/Borrar?parameter1=" + productoNuevo.getParameter1() + "&parameter2=" + productoNuevo.getParameter2();
         CloseableHttpClient httpClient = HttpClients.createDefault();
         String datospasar = productoNuevo.toString();
         StringEntity entidad = null;
