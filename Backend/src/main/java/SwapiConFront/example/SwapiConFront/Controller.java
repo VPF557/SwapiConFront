@@ -20,6 +20,15 @@ public class Controller {
         return listaPeticiones;
     }
 
+    @GetMapping("/registroP")
+    public ArrayList<Planet> listaPlanets()
+    {
+        //Leemos el reason e introducimos los elementos en un arraylist
+        ArrayList<Planet> listaPlanets = reader.LeerFicheroPlanets("Planets.json");
+        //Mostramos los elementos leidos
+        return listaPlanets;
+    }
+
     @PostMapping("/peticion")
     public void mandarElemento(@RequestBody Param objeto1)
     {
