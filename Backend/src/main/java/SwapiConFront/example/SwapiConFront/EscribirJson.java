@@ -23,7 +23,7 @@ public class EscribirJson {
     {
         Gson gson = new Gson();
 
-        try (FileWriter writer = new FileWriter("Peticiones.json")) {
+        try (FileWriter writer = new FileWriter("Petitions.json")) {
             gson.toJson(listaParams, writer);
         } catch (IOException e) {
             e.printStackTrace();

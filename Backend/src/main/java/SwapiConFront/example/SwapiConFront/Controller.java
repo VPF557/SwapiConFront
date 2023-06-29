@@ -25,10 +25,10 @@ public class Controller {
     {
         //Hecho
         ArrayList<Planet> listaPlanets = reader.LeerFicheroPlanets("Planets.json");
-        ArrayList<Param> listaPeticiones = reader.LeerFicheroPeticiones("Peticiones.json");
+        ArrayList<Param> listaPeticiones = reader.LeerFicheroPeticiones("Petitions.json");
         ArrayList<Starship> listaStarships = reader.LeerFicheroStarships("Starships.json");
 
-        if(objeto1.getParameter1().equals("fusion"))
+        if(objeto1.getParameter1().equals("starships"))
         {
             Starship starship = new Starship();
             starship = data.obtenerStarships(objeto1);
