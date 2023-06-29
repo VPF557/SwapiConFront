@@ -31,16 +31,16 @@ public class Controller {
         if(objeto1.getParameter1().equals("fusion"))
         {
             Starship starship = new Starship();
-            starship = data.obtenerFusion(objeto1);
+            starship = data.obtenerStarships(objeto1);
             listaStarships.add(starship);
             writter.escribirJsonStarship(listaStarships);
 
         }
         else
         {
-            Planet palneta = new Planet();
-            palneta = data.obtenerPersonaje(objeto1);
-            listaPlanets.add(palneta);
+            Planet planeta = new Planet();
+            planeta = data.obtenerPlanets(objeto1);
+            listaPlanets.add(planeta);
             writter.escribirJsonPlanet(listaPlanets);
 
         }
