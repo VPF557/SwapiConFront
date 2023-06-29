@@ -27,7 +27,7 @@ public class VistaAlta extends VerticalLayout {
         Label etiqueta2 = new Label("Parametro 2");
         TextField texto2 = new TextField();
 
-
+//terminado
         Button boton = new Button("Añadir");
 //Corregido y hecho
         boton.addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
