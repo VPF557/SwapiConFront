@@ -11,37 +11,37 @@ public class Controller {
     DataHanding data = new DataHanding();
     EscribirJson writter = new EscribirJson();
 
-    @GetMapping("/registro")
+   /* @GetMapping("/registro")
     public ArrayList<Parametro> listaObjeto1()
     {
         //Leemos el reason e introducimos los elementos en un arraylist
         ArrayList<Parametro> listaPeticiones = reader.LeerFicheroPeticiones("Peticiones.json");
         //Mostramos los elementos leidos
         return listaPeticiones;
-    }
+    } */
 
     @PostMapping("/peticion")
-    public void mandarElemento(@RequestBody Parametro objeto1)
+    public void mandarElemento(@RequestBody Param objeto1)
     {
         //Hecho
-        ArrayList<Personaje> listaPersonaje = reader.LeerFicheroPersonajes("Personajes.json");
-        ArrayList<Parametro> listaPeticiones = reader.LeerFicheroPeticiones("Peticiones.json");
-        ArrayList<Fusion> listaFusion = reader.LeerFicheroFusion("Fusiones.json");
+        ArrayList<Planet> listaPlanets = reader.LeerFicheroPlanets("Planets.json");
+        ArrayList<Param> listaPeticiones = reader.LeerFicheroPeticiones("Peticiones.json");
+        ArrayList<Starship> listaStarships = reader.LeerFicheroStarships("Starships.json");
 
         if(objeto1.getParameter1().equals("fusion"))
         {
-            Fusion fusion = new Fusion();
-            fusion = data.obtenerFusion(objeto1);
-            listaFusion.add(fusion);
-            writter.escribirJsonFusion(listaFusion);
+            Starship starship = new Starship();
+            starship = data.obtenerFusion(objeto1);
+            listaStarships.add(starship);
+            writter.escribirJsonStarship(listaStarships);
 
         }
         else
         {
-            Personaje personaje = new Personaje();
-            personaje = data.obtenerPersonaje(objeto1);
-            listaPersonaje.add(personaje);
-            writter.escribirJsonPersonaje(listaPersonaje);
+            Planet palneta = new Planet();
+            palneta = data.obtenerPersonaje(objeto1);
+            listaPlanets.add(palneta);
+            writter.escribirJsonPlanet(listaPlanets);
 
         }
 
@@ -49,7 +49,7 @@ public class Controller {
         writter.escribirJsonPeticiones(listaPeticiones);
     }
 
-    @DeleteMapping("/Borrar{parameter2}")
+    /*@DeleteMapping("/Borrar{parameter2}")
     public ArrayList<Parametro> borrarParam(@RequestParam String parameter2)
     {
         ArrayList<Parametro>  lista = data.buscarObjeto(parameter2,"Peticiones.json");
@@ -58,5 +58,5 @@ public class Controller {
 
         return lista;
 
-    }
+    }*/
 }
